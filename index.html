@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>연구 분야의 지평 탐색:<br>Science of Science의 지식 지형도 연구</title>
+<title>연구 분야의 지평 탐색: Science of Science의 지식 지형도 연구</title>
+<!-- Open Graph / 소셜 미리보기 -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="연구 분야의 지평 탐색: Science of Science의 지식 지형도 연구">
+<meta property="og:description" content="Science of Science 핵심 논문 50편을 분석한 지식 지형도 서베이 보고서. 과학의 패턴, 혁신성 측정, AI 시대의 과학 탐색, 오픈소스 도구 생태계까지 7개 챕터로 구성.">
+<meta property="og:url" content="https://jehyunlee.github.io/scisci-landscape/">
+<meta property="og:image" content="https://jehyunlee.github.io/scisci-landscape/og_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<!-- Twitter / KakaoTalk 호환 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="연구 분야의 지평 탐색: Science of Science의 지식 지형도 연구">
+<meta name="twitter:description" content="Science of Science 핵심 논문 50편을 분석한 지식 지형도 서베이 보고서.">
+<meta name="twitter:image" content="https://jehyunlee.github.io/scisci-landscape/og_image.jpg">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
@@ -282,6 +296,93 @@ footer { background: var(--navy); color: #aac; padding: 24px 44px;
   #hero-text h1 { font-size: 20px; }
   #references { margin: 16px 8px; padding: 20px 16px; }
   .chapter { margin: 16px 8px; }
+  .tool-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Tool Cards (Chapter 7) ── */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+.tool-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tool-card:hover {
+  box-shadow: 0 4px 18px rgba(46,116,181,0.13);
+  transform: translateY(-2px);
+}
+.tool-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tool-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  flex: 1;
+  min-width: 120px;
+}
+.tool-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.tool-badge:hover { opacity: 0.8; }
+.badge-github { background: #24292e; color: #fff; }
+.badge-hf     { background: #ff9d00; color: #1a1a1a; }
+.badge-pypi   { background: #3775a9; color: #fff; }
+.badge-r      { background: #276dc3; color: #fff; }
+.tool-desc {
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.65;
+}
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+}
+.tool-tag {
+  background: var(--light-blue);
+  color: var(--blue);
+  padding: 2px 9px;
+  border-radius: 10px;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+.tool-tag.tag-green  { background: #eafaf1; color: #1e8449; }
+.tool-tag.tag-orange { background: #fef9e7; color: #b7770d; }
+.tool-tag.tag-purple { background: #f4ecf7; color: #7d3c98; }
+.tool-note {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+.section-intro {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.7;
 }
 </style>
 </head>
@@ -322,7 +423,13 @@ footer { background: var(--navy); color: #aac; padding: 24px 44px;
 <a class="toc-section" href="#ch6">제6장: AI 시대의 과학 지형 탐색</a>
 <a class="toc-section" href="#ch6-s1">6.1 AI가 그리는 과학 지형도</a>
 <a class="toc-section" href="#ch6-s2">6.2 자율 과학 발견의 전망</a>
-<a class="toc-section" href="#ch6-s3">6.3 미래 연구 방향</a></div>
+<a class="toc-section" href="#ch6-s3">6.3 미래 연구 방향</a>
+<div class="toc-chapter">제7장: 오픈소스 도구 생태계</div>
+<a class="toc-section" href="#ch7">제7장: 오픈소스 도구 생태계</a>
+<a class="toc-section" href="#ch7-s1">7.1 데이터 수집 및 접근 도구</a>
+<a class="toc-section" href="#ch7-s2">7.2 네트워크·지형도 분석 도구</a>
+<a class="toc-section" href="#ch7-s3">7.3 서지계량 지표 계산 도구</a>
+<a class="toc-section" href="#ch7-s4">7.4 AI/LLM 기반 분석 도구</a></div>
 </nav>
 
 <button id="hamburger">&#9776;</button>
@@ -621,6 +728,320 @@ footer { background: var(--navy); color: #aac; padding: 24px 44px;
     <div class="arrow-summary">
       <span class="arrow-icon">▶</span>
       결론: 지식 지형도는 과학이 스스로를 이해하는 거울이다. 더 정확하고 포용적이며 실시간인 지형도를 만드는 것은 과학적 과제인 동시에 과학 정책과 연구 전략의 핵심 인프라 문제다.
+    </div>
+  </div>
+</article>
+
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-num">제7장</div>
+    <h1 class="chapter-title" id="ch7">오픈소스 도구 생태계 — Science of Science를 위한 실용 도구 가이드</h1>
+  </div>
+  <div class="chapter-body">
+    <p>Science of Science 연구는 이론적 발전과 함께 강력한 오픈소스 도구 생태계를 구축해왔다. 수천만 건의 논문 메타데이터를 무료로 제공하는 OpenAlex 같은 인프라가 등장하고, 인용 네트워크 분석에서 LLM 기반 과학 지식 탐색까지 전 과정을 지원하는 파이썬 패키지들이 공개됨에 따라, 과학계량 연구에 필요한 인프라 장벽이 급격히 낮아지고 있다. 이 장에서는 GitHub과 HuggingFace를 중심으로 현재 활발히 유지관리되는 핵심 도구들을 카테고리별로 정리한다.</p>
+
+    <h2 class="section-title" id="ch7-s1">7.1 데이터 수집 및 접근 도구</h2>
+    <p class="section-intro">Science of Science 연구의 출발점은 양질의 서지 데이터다. OpenAlex, Semantic Scholar, Web of Science 등 주요 데이터베이스에 대한 Python API 클라이언트들이 오픈소스로 공개되어 있으며, 수억 건의 논문·저자·기관·인용 데이터를 코드 몇 줄로 접근할 수 있게 되었다.</p>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">pyalex</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/J535D165/pyalex" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-pypi" href="https://pypi.org/project/pyalex/" target="_blank">PyPI</a>
+          </div>
+        </div>
+        <p class="tool-desc">OpenAlex API의 가장 널리 사용되는 Python 클라이언트 (약 350 stars). Works, Authors, Sources, Institutions, Topics 등 모든 엔티티를 단일 인터페이스로 지원하며, 페이지네이션 자동 처리와 필터·정렬 기능을 제공한다. 2억 5천만 건 이상의 학술 논문 메타데이터에 무료 접근이 가능하다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">OpenAlex</span>
+          <span class="tool-tag">데이터 수집</span>
+          <span class="tool-tag">Python 3.8+</span>
+          <span class="tool-tag tag-green">활발히 유지</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">semanticscholar</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/danielnsilva/semanticscholar" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-pypi" href="https://pypi.org/project/semanticscholar/" target="_blank">PyPI</a>
+          </div>
+        </div>
+        <p class="tool-desc">Semantic Scholar Academic Graph API의 Python 클라이언트. 논문, 저자, 인용, 추천 논문 등 전체 API 엔드포인트를 지원하며, 비동기 처리(httpx)와 자동 재시도(tenacity)로 대규모 수집을 안정적으로 처리한다. 2억 건 이상의 논문과 AI·NLP 특화 시맨틱 피처를 제공한다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Semantic Scholar</span>
+          <span class="tool-tag">데이터 수집</span>
+          <span class="tool-tag">비동기 지원</span>
+          <span class="tool-tag tag-green">활발히 유지</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">pySciSci</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/SciSciCollective/pyscisci" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-pypi" href="https://pypi.org/project/pyscisci/" target="_blank">PyPI</a>
+          </div>
+        </div>
+        <p class="tool-desc">Science of Science 연구 전용 대규모 서지계량 분석 패키지. WoS, DBLP, APS, PubMed, OpenAlex 등 주요 데이터베이스를 단일 인터페이스로 통합한다. CD 지수, Sleeping Beauty, 신규성·관습성 지수, 학제성 지수 등 핵심 과학계량 지표를 제공하며, <em>Quantitative Science Studies</em> (MIT Press, 2023)에 논문으로 출판되었다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Science of Science</span>
+          <span class="tool-tag">서지계량</span>
+          <span class="tool-tag">CD 지수</span>
+          <span class="tool-tag tag-orange">논문 출판</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">SciSciNet</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/kellogg-cssi/SciSciNet" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">Northwestern University Kellogg CSSI가 구축한 대규모 Science of Science 데이터 레이크. 1억 3천만 건 이상의 논문과 펀딩·특허·기관 네트워크를 통합하며, CD 지수 등 핵심 지표가 사전 계산된 상태로 제공된다. OpenAlex 최신 스냅샷 기반 v2 업데이트가 진행 중이며, <em>Scientific Data</em> (Nature, 2023)에 수록되었다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">데이터셋</span>
+          <span class="tool-tag">논문-펀딩-특허</span>
+          <span class="tool-tag">사전계산 지표</span>
+          <span class="tool-tag tag-orange">논문 출판</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="ch7-s2">7.2 네트워크·지형도 분석 도구</h2>
+    <p class="section-intro">서지 데이터를 확보한 후의 핵심 과제는 네트워크 구조를 분석하고 지식 지형도를 시각화하는 것이다. 공저자 네트워크, 공인용 클러스터, 주제 진화 등을 분석할 수 있는 전문 도구들이 오픈소스로 공개되어 있다.</p>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">metaknowledge</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/UWNETLAB/metaknowledge" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">UW Network Lab이 개발한 서지계량·네트워크 분석 Python 패키지. WoS 메타데이터 파일을 읽어 공저자 네트워크, 공출현 네트워크, 인용 네트워크를 생성한다. NetworkX 기반으로 수백만 건의 레코드를 처리할 수 있으며, <code>coAuthNetwork()</code>, <code>twoModeNetwork()</code> 등 직관적인 API를 제공한다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">공저자 네트워크</span>
+          <span class="tool-tag">인용 네트워크</span>
+          <span class="tool-tag">NetworkX</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">Sci2 Tool</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/CIShell/sci2" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">Indiana University가 개발한 Science of Science 전용 분석 플랫폼. 미시(개인)·중시(기관)·거시(글로벌) 수준에서 시간적·지리적·주제적·네트워크 분석을 지원한다. Scopus/WoS 데이터 처리, 버스트 감지, 텍스트 네트워크 추출, 지리적 시각화 기능을 포함하며 NIH Library 추천 도구로 등재되어 있다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">과학 지형도</span>
+          <span class="tool-tag">지리적 시각화</span>
+          <span class="tool-tag">버스트 감지</span>
+          <span class="tool-tag tag-purple">GUI 도구</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">pybibx</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/Valdecy/pybibx" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">Scopus, WoS, PubMed 원시 데이터로부터 종합적인 서지계량·과학계량 분석을 수행하는 Python 패키지. Sentence-BERT, BERTopic, PEGASUS, ChatGPT 등 AI 도구를 통합한 최초의 AI 기반 서지계량 패키지로, 인용·협력·유사도 네트워크, 토픽 모델링, 텍스트 요약, 임베딩 벡터 분석을 단일 파이프라인에서 처리한다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">BERTopic</span>
+          <span class="tool-tag">토픽 모델링</span>
+          <span class="tool-tag">AI 통합</span>
+          <span class="tool-tag tag-green">활발히 유지</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">bibliometrix</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/massimoaria/bibliometrix" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-r" href="https://cran.r-project.org/package=bibliometrix" target="_blank">CRAN</a>
+          </div>
+        </div>
+        <p class="tool-desc">R 기반의 종합 과학 지형도 분석 도구로 Science of Science 분야에서 표준 도구로 광범위하게 사용된다. Scopus/WoS 데이터 가져오기, 학술지·저자 임팩트, 인용 결합·공인용 네트워크, VOSviewer 연동을 지원한다. 웹 기반 인터페이스 biblioshiny도 함께 제공되어 코딩 없이도 분석이 가능하다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">R</span>
+          <span class="tool-tag">공저자 네트워크</span>
+          <span class="tool-tag">VOSviewer 연동</span>
+          <span class="tool-tag tag-purple">biblioshiny</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="ch7-s3">7.3 서지계량 지표 계산 도구</h2>
+    <p class="section-intro">CD 지수, 신규성 지수, 학제성 지수 등 Science of Science 연구의 핵심 지표들을 계산하는 전문 패키지들이 별도로 존재한다. 이 도구들은 종종 논문 저자가 직접 공개한 것으로 재현성과 신뢰성이 높다.</p>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">cdindex</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/russellfunk/cdindex" target="_blank">⭐ GitHub (원본)</a>
+            <a class="tool-badge badge-github" href="https://github.com/dspinellis/fast-cdindex" target="_blank">⚡ fast-cdindex</a>
+          </div>
+        </div>
+        <p class="tool-desc">CD 지수(Consolidation-Disruption Index) 계산 전용 Python 패키지. 내부는 C로 작성되어 성능을 최적화했으며, CD 지수 원 논문 저자인 Russell Funk(University of Minnesota)가 직접 관리한다. 진화하는 방향 그래프에서 CD 지수와 동적 지표를 계산하며, 대용량 처리용 <code>fast-cdindex</code> 버전도 별도로 제공된다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">CD 지수</span>
+          <span class="tool-tag">파괴적 혁신</span>
+          <span class="tool-tag">C 최적화</span>
+          <span class="tool-tag tag-orange">저자 직접 공개</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">Novelpy</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/Kwirtz/novelpy" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-pypi" href="https://pypi.org/project/novelpy/" target="_blank">PyPI</a>
+          </div>
+        </div>
+        <p class="tool-desc">서지계량 및 특허 데이터에서 신규성(Novelty)과 파괴성(Disruptiveness)을 측정하는 통합 Python 패키지. Atypicality, Commonness, Bridging, Scientific Novelty, Breadth/Depth 등 다양한 지표를 표준화된 프레임워크로 제공하며, arXiv 논문(2022)과 readthedocs 문서를 통해 학술적 투명성을 갖추고 있다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">신규성</span>
+          <span class="tool-tag">Atypicality</span>
+          <span class="tool-tag">파괴성</span>
+          <span class="tool-tag tag-orange">논문 출판</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">awesome-scisci</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/CollectiveReview/awesome-scisci" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">Science of Science 연구 자원의 큐레이션 목록 허브. 데이터셋, 분석 도구, 플랫폼, 학회 정보를 체계적으로 분류하여 제공한다. SciSciNet, pySciSci, cdindex 등 주요 도구들의 링크와 간략한 설명을 통해 연구 시작 시 참조점으로 활용하기에 적합하다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">큐레이션</span>
+          <span class="tool-tag">데이터셋 목록</span>
+          <span class="tool-tag">도구 허브</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="ch7-s4">7.4 AI/LLM 기반 분석 도구</h2>
+    <p class="section-intro">AI가 과학 지형 탐색의 도구로 자리 잡으면서, 과학 텍스트 특화 언어 모델과 LLM 기반 분석 프레임워크가 Science of Science 연구에 직접 활용되고 있다. HuggingFace를 통해 배포되는 모델들은 논문 임베딩, 엔티티 추출, 주제 분류 등에 즉시 활용 가능하다.</p>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">SPECTER2</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/allenai/SPECTER2" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-hf" href="https://huggingface.co/allenai/specter2" target="_blank">🤗 HuggingFace</a>
+          </div>
+        </div>
+        <p class="tool-desc">과학 논문 임베딩의 현재 표준. 23개 학문 분야의 600만 건 triplet으로 학습되었으며, 태스크별 어댑터(분류·회귀·근접성·검색)를 지원한다. EMNLP 2023에서 SciRepEval 벤치마크와 함께 발표되었으며, 논문 유사도·추천·인용 예측·주제 분류에서 가장 높은 성능을 보이는 공개 모델이다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">논문 임베딩</span>
+          <span class="tool-tag">유사도</span>
+          <span class="tool-tag">태스크 어댑터</span>
+          <span class="tool-tag tag-green">AllenAI</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">SciBERT</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/allenai/scibert" target="_blank">⭐ GitHub</a>
+            <a class="tool-badge badge-hf" href="https://huggingface.co/allenai/scibert_scivocab_uncased" target="_blank">🤗 HuggingFace</a>
+          </div>
+        </div>
+        <p class="tool-desc">Allen Institute for AI가 Semantic Scholar 논문 114만 건(31억 토큰)으로 사전학습한 BERT 모델. 과학 도메인 NLP 태스크에서 범용 BERT 대비 일관적으로 우수한 성능을 보인다. NER, 텍스트 분류, 관계 추출, 종속성 파싱 등에 활용되며, 현재는 SPECTER2 등 후속 모델로 발전했으나 여전히 광범위하게 인용·사용된다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">BERT</span>
+          <span class="tool-tag">NER</span>
+          <span class="tool-tag">텍스트 분류</span>
+          <span class="tool-tag tag-orange">고인용 모델</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">SciSpacy</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/allenai/scispacy" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">생물의학 및 과학 문서를 위한 완전한 spaCy 파이프라인. 약 785k 단어 어휘를 포함하며 SciBERT를 트랜스포머 모델로 활용한다. UMLS·MeSH·GO·HPO 등 생물의학 온톨로지에 대한 엔티티 연결(Entity Linking) 기능이 강점으로, 연구 개체명 추출과 의미 정규화 작업에 널리 사용된다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">NLP</span>
+          <span class="tool-tag">엔티티 연결</span>
+          <span class="tool-tag">UMLS/MeSH</span>
+          <span class="tool-tag tag-green">AllenAI</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <span class="tool-name">SciSciGPT</span>
+          <div class="tool-badges">
+            <a class="tool-badge badge-github" href="https://github.com/Northwestern-CSSI/SciSciGPT" target="_blank">⭐ GitHub</a>
+          </div>
+        </div>
+        <p class="tool-desc">Science of Science 연구를 위한 LLM 기반 AI 협업 도구. LangChain/LangGraph 멀티에이전트 워크플로우, Pinecone 벡터 DB 기반 RAG, Claude·Gemini 모델을 활용한다. SciSciCorpus의 의미 검색, 복잡한 DB 쿼리 자동화, 분석 워크플로우 생성, 자체 평가 기능을 제공하며, <em>Nature Computational Science</em> (2025)에 수록된 최신 도구다.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">LLM</span>
+          <span class="tool-tag">RAG</span>
+          <span class="tool-tag">멀티에이전트</span>
+          <span class="tool-tag tag-orange">Nature 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p class="box-title">도구 선택 가이드 — 연구 목적별 추천</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;">
+        <thead>
+          <tr style="background:#2E74B5;color:#fff;">
+            <th style="padding:7px 10px;text-align:left;">연구 목적</th>
+            <th style="padding:7px 10px;text-align:left;">추천 도구</th>
+            <th style="padding:7px 10px;text-align:left;">비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f7faff;"><td style="padding:6px 10px;">OpenAlex 데이터 수집</td><td style="padding:6px 10px;font-weight:600;">pyalex</td><td style="padding:6px 10px;">무료, 2억5천만 건</td></tr>
+          <tr><td style="padding:6px 10px;">Semantic Scholar 수집</td><td style="padding:6px 10px;font-weight:600;">semanticscholar</td><td style="padding:6px 10px;">AI 피처 포함</td></tr>
+          <tr style="background:#f7faff;"><td style="padding:6px 10px;">종합 SciSci 분석</td><td style="padding:6px 10px;font-weight:600;">pySciSci</td><td style="padding:6px 10px;">WoS/DBLP/APS 통합</td></tr>
+          <tr><td style="padding:6px 10px;">대규모 통합 데이터셋</td><td style="padding:6px 10px;font-weight:600;">SciSciNet</td><td style="padding:6px 10px;">논문-펀딩-특허</td></tr>
+          <tr style="background:#f7faff;"><td style="padding:6px 10px;">CD 지수 계산</td><td style="padding:6px 10px;font-weight:600;">cdindex / pySciSci</td><td style="padding:6px 10px;">원저자 공개</td></tr>
+          <tr><td style="padding:6px 10px;">신규성·파괴성 측정</td><td style="padding:6px 10px;font-weight:600;">Novelpy</td><td style="padding:6px 10px;">다양한 지표 통합</td></tr>
+          <tr style="background:#f7faff;"><td style="padding:6px 10px;">공저자·인용 네트워크</td><td style="padding:6px 10px;font-weight:600;">metaknowledge</td><td style="padding:6px 10px;">WoS 특화</td></tr>
+          <tr><td style="padding:6px 10px;">논문 임베딩·유사도</td><td style="padding:6px 10px;font-weight:600;">SPECTER2</td><td style="padding:6px 10px;">HuggingFace 배포</td></tr>
+          <tr style="background:#f7faff;"><td style="padding:6px 10px;">LLM 기반 SciSci 분석</td><td style="padding:6px 10px;font-weight:600;">SciSciGPT</td><td style="padding:6px 10px;">RAG + 멀티에이전트</td></tr>
+          <tr><td style="padding:6px 10px;">도구·데이터셋 탐색</td><td style="padding:6px 10px;font-weight:600;">awesome-scisci</td><td style="padding:6px 10px;">큐레이션 허브</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="challenge-box">
+      <p class="box-title">도구 활용의 핵심 도전</p>
+      <p>① <strong>데이터 접근 장벽</strong>: Web of Science, Scopus 등 상용 DB는 여전히 유료. OpenAlex 전환으로 완화되고 있으나 과거 데이터 커버리지에 공백 존재</p>
+      <p>② <strong>재현성 문제</strong>: 동일 지표도 구현 방식에 따라 결과 차이 발생. pySciSci 등 표준 구현체 사용이 권장됨</p>
+      <p>③ <strong>스케일과 성능</strong>: 수천만 건 이상의 논문을 처리할 때 메모리·연산 제약. 분산 처리 또는 사전 계산된 데이터셋(SciSciNet) 활용 필요</p>
+      <p>④ <strong>도메인 편향</strong>: 대부분의 도구와 모델이 영어·자연과학·컴퓨터과학 중심. 한국어 논문, 인문사회 분야, 회색 문헌 처리는 별도 작업 필요</p>
+    </div>
+
+    <div class="arrow-summary">
+      <span class="arrow-icon">▶</span>
+      Science of Science 연구의 기술 스택은 데이터 접근(pyalex/semanticscholar) → 지표 계산(pySciSci/cdindex/Novelpy) → 네트워크 분석(metaknowledge/bibliometrix) → AI 임베딩(SPECTER2) → LLM 기반 탐색(SciSciGPT)으로 이어지는 완전한 파이프라인을 오픈소스만으로 구성할 수 있게 되었다.
     </div>
   </div>
 </article>
